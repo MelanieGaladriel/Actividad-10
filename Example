@@ -1,0 +1,77 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package shape;
+
+import java.util.Scanner;
+/**
+ *
+ * @author work pc
+ */
+public class Example {
+    
+  public static void main(String[] args) {  
+    
+ Scanner scanner = new Scanner(System.in);   
+ int option;
+ Shape shape = null;
+ 
+ do {
+System.out.println("Selecciona que operacion deseas");
+System.out.println("1. Area");
+System.out.println("2. Perimetro");
+System.out.println("3. Salir");
+option = scanner.nextInt();
+
+if(option == 1 || option == 2)
+{
+System.out.println("Selecciona que forma quieres calcular");
+System.out.println("1. Circle");
+System.out.println("2. Square");
+System.out.println("3. EquilateralTriangle");
+System.out.println("4. Pentagono");
+int figure = scanner.nextInt();
+
+switch (figure)
+{
+    case 1:
+    System.out.println("Ingresa el radio tu circulo");
+    double radius = scanner.nextDouble();
+    shape = new Circle(radius);
+    break;
+    
+    case 2:
+    System.out.println("Ingresa la medida del lado de tu cuadrado");
+    double side = scanner.nextDouble();
+    shape = new Square(side);
+    break;
+    
+    case 3:
+    System.out.println("Ingresa la medida del lado de tu triangulo");
+    double sideLength = scanner.nextDouble();
+    shape = new EquilateralTriangle (sideLength);
+    break;
+    
+    case 4:
+    System.out.println("Ingresa el apotema tu pentagono");
+    double apothem = scanner.nextDouble();
+    System.out.println("Ingresa la medida del lado de tu pentagono");
+    double sides = scanner.nextDouble();
+    shape = new Circle(apothem);
+    shape = new Square(sides);
+    break;
+}
+if (option == 1){
+System.out.println("El area de tu figura es:" + shape.area());
+}
+else{
+System.out.println("El perimetro de tu figura es:" + shape.perimeter());
+}   
+}
+}
+ while (option != 3);
+ 
+ scanner.close();
+}
+}
