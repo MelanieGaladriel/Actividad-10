@@ -1,0 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package shape;
+
+import java.util.Scanner;
+/**
+ *
+ * @author work pc
+ */
+public abstract class Shape {
+    public abstract double area();
+    public abstract double perimeter();
+}
